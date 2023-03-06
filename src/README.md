@@ -1,6 +1,39 @@
-## This is where your Laravel app goes
+EXP_API
 
-To get started, **delete this file** and then do one of the following:
+## Get Started
 
-- Clone your project or copy all of the files directly into this `src` directory.
-- Spin up the Docker network by following the instructions on the main [README.md](../README.md), and install a brand new Laravel project by running `docker-compose run --rm composer create-project laravel/laravel .` in your terminal.
+Open a terminal and from the project root run 
+`cp .env.example .env`.
+`docker-compose build --no-cache && docker-compose up -d`. 
+
+Open up your browser of choice to [http://localhost:8080](http://localhost:8080) and you should see your Laravel-Lumen app running as intended. 
+
+To get into the application bash. So you can run php artisan and other commands run
+`docker exec -it paychange_app bash`
+
+Run composer install `composer install`
+
+For first time cloning of the project. Also generate app key
+
+Run `php artisan key:generate`
+
+Run `php artisan route:clear`
+
+Run `php artisan cache:clear`
+
+Run `php artisan config:clear`
+
+Run `php artisan passport:install`
+
+Run `php artisan migrate`
+
+Run `php artisan db:seed`
+
+
+Containers created and their ports are as follows:
+
+- **mmwebserver** - `:8080`
+
+- **mmdatabase** - `:3306`
+
+- **mmapp** - `:9000`
